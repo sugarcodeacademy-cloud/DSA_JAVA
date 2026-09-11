@@ -1,5 +1,7 @@
 package Module2.Day13Subarrays;
 
+import javax.sound.midi.Soundbank;
+
 public class MaxSubArraySum {
     /*
     Time Complexity: O(N)
@@ -22,7 +24,6 @@ public class MaxSubArraySum {
     }
 
     static int[] KadanesAlgoSubArray(int[] A){
-        int[] ans = new int[2];
         int maxSum = Integer.MIN_VALUE;
         int sum = 0;
         int N = A.length;
@@ -51,13 +52,11 @@ public class MaxSubArraySum {
             }
         }
 //        return maxEnd-maxStart; length of max Subarray
-        ans[0] = maxStart;
-        ans[1] = maxEnd;
-        return ans;
+        return new int[] {maxStart, maxEnd};
     }
     public static void main(String[] args) {
         int[] arr = {5,6,7,-3,2,-10,-12,8,12,21,-4,7};
-        System.out.println("Kadanes Algorithm: "+ KadanesAlgo(arr));
+        System.out.println("Kadanes Algorithm: "+ KadanesAlgoSum(arr));
 
     }
 }
